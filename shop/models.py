@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 
 class Shop(models.Model):
     name = models.CharField(max_length=200)
-    
+    created_date = models.DateTimeField(default=timezone.now)
     def __str__(self):
         return self.name
 
@@ -19,7 +19,7 @@ class FavoriteShop(models.Model):
 class Product(models.Model):
     shop = models.ForeignKey(Shop, on_delete=models.CASCADE)
     name = models.CharField(max_length=200)
-
+    created_date = models.DateTimeField(default=timezone.now)
     def __str__(self):
         return self.name
 
