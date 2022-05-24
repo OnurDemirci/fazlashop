@@ -1,4 +1,12 @@
-{% for shop in newest_shops %}
-    <h1>{{ shop.name }}</h1>
+{% extends 'shop/shop_template.html' %}
 
-{% endfor %}
+{% block title %}
+    FazlaShop Main Page
+{% endblock title %}
+
+{% block content %}
+    <ul>
+    {% for shop in newest_shops %}
+        <li>{{ shop.name }} - {{ shop.created_date }}</li>
+    {% endfor %}
+{% endblock content %}
